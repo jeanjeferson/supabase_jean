@@ -421,6 +421,9 @@ services:
       retries: 10
     ports:
       - '5433:5432'
+    networks: # Adicione ou modifique esta seção
+      - default
+      - n8n_network
     depends_on:
       vector:
         condition: service_healthy
@@ -525,6 +528,11 @@ services:
         "-c",
         "/app/bin/migrate && /app/bin/supavisor eval \"$$(cat /etc/pooler/pooler.exs)\" && /app/bin/server"
       ]
-
+networks:
+  default:
+    # driver: bridge (implícito)
+  n8n_network:
+    name: easypanel-ai
+    external: true
 volumes:
   db-config:
