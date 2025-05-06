@@ -535,8 +535,8 @@ networks:
   n8n_network:
     name: easypanel-ai
     external: true
-  n8n_automations_network:
-    name: easypanel-automations
-    external: true
+  # n8n_automations_network:
+  #   name: easypanel-automations
+  #   external: true
 volumes:
   db-config:
