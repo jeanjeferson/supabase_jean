@@ -424,7 +424,7 @@ services:
     networks: # Adicione ou modifique esta seção
       - default
       - n8n_network
-      # - n8n_automations_network
+      - n8n_automations_network
     depends_on:
       vector:
         condition: service_healthy
@@ -535,8 +535,8 @@ networks:
   n8n_network:
     name: easypanel-ai
     external: true
-  # n8n_automations_network:
-  #   name: easypanel-automations
-  #   external: true
+  n8n_automations_network:
+    name: easypanel-n8n
+    external: true
 volumes:
   db-config:
