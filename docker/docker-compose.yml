@@ -424,7 +424,7 @@ services:
     networks: # Adicione ou modifique esta seção
       - default
       - n8n_network
-      - n8n_automations_network
+      # - n8n_automations_network
     depends_on:
       vector:
         condition: service_healthy
