@@ -423,8 +423,8 @@ services:
       - '5433:5432'
     networks: # Adicione ou modifique esta seção
       - easypanel_net
-      - n8n_network
-      - n8n_automations_network
+      # - n8n_network
+      # - n8n_automations_network
     depends_on:
       vector:
         condition: service_healthy
@@ -533,11 +533,11 @@ networks:
   easypanel_net:
     name: easypanel_net
     external: true
-  n8n_network:
-    name: easypanel_net
-    external: true
-  n8n_automations_network:
-    name: easypanel_net
-    external: true
+  # n8n_network:
+  #   name: easypanel_net
+  #   external: true
+  # n8n_automations_network:
+  #   name: easypanel_net
+  #   external: true
 volumes:
   db-config:
