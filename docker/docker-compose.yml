@@ -422,6 +422,9 @@ services:
       interval: 5s
       retries: 3
     environment:
+      LOGFLARE_API_KEY: ${LOGFLARE_API_KEY}
+      LOGFLARE_URL: http://analytics:4000
+      LOGFLARE_SOURCE_ID: default
       LOGFLARE_PUBLIC_ACCESS_TOKEN: ${LOGFLARE_PUBLIC_ACCESS_TOKEN}
     command: [ "--config", "/etc/vector/vector.yml" ]
     security_opt:
