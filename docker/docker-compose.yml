@@ -531,8 +531,8 @@ services:
       ]
 networks:
   default:
-    driver: overlay
-    name: easypanel_net
+    # driver: overlay
+    # name: easypanel_net
   n8n_network:
     name: easypanel_net
     external: true
