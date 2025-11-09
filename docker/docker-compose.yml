@@ -421,8 +421,8 @@ services:
       retries: 10
     ports:
       - '5433:5432'
-    networks: # Adicione ou modifique esta seção
-      - easypanel_net
+    # networks: # Adicione ou modifique esta seção
+      # - easypanel_net
       # - n8n_network
       # - n8n_automations_network
     depends_on:
@@ -529,10 +529,10 @@ services:
         "-c",
         "/app/bin/migrate && /app/bin/supavisor eval \"$$(cat /etc/pooler/pooler.exs)\" && /app/bin/server"
       ]
-networks:
-  easypanel_net:
-    name: easypanel_net
-    external: true
+# networks:
+#   easypanel_net:
+#     name: easypanel_net
+#     external: true
   # n8n_network:
   #   name: easypanel_net
   #   external: true
