@@ -531,15 +531,13 @@ services:
       ]
 networks:
   easypanel_net:
-      name: easypanel_net
-      external: true
-    # driver: overlay
-    # name: easypanel_net
-  # n8n_network:
-  #   name: easypanel_net
-  #   external: true
-  # n8n_automations_network:
-  #   name: easypanel_net
-  #   external: true
+    name: easypanel_net
+    external: true
+  n8n_network:
+    name: easypanel_net
+    external: true
+  n8n_automations_network:
+    name: easypanel_net
+    external: true
 volumes:
   db-config:
