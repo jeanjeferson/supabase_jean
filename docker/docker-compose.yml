@@ -531,12 +531,13 @@ services:
       ]
 networks:
   default:
-    # driver: bridge (implícito)
+    driver: overlay
+    name: easypanel_net
   n8n_network:
-    name: easypanel-ai
+    name: easypanel_net
     external: true
   n8n_automations_network:
-    name: easypanel-automations
+    name: easypanel_net
     external: true
 volumes:
   db-config:
