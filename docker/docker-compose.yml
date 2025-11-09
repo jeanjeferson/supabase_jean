@@ -422,7 +422,7 @@ services:
     ports:
       - '5433:5432'
     networks: # Adicione ou modifique esta seção
-      - default
+      - easypanel_net
       - n8n_network
       - n8n_automations_network
     depends_on:
@@ -530,14 +530,16 @@ services:
         "/app/bin/migrate && /app/bin/supavisor eval \"$$(cat /etc/pooler/pooler.exs)\" && /app/bin/server"
       ]
 networks:
-  default:
+  easypanel_net:
+      name: easypanel_net
+      external: true
     # driver: overlay
     # name: easypanel_net
-  n8n_network:
-    name: easypanel_net
-    external: true
-  n8n_automations_network:
-    name: easypanel_net
-    external: true
+  # n8n_network:
+  #   name: easypanel_net
+  #   external: true
+  # n8n_automations_network:
+  #   name: easypanel_net
+  #   external: true
 volumes:
   db-config:
